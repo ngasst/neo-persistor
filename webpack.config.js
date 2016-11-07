@@ -33,10 +33,7 @@ function createConfig(isDebug) {
 		target: "node",
 		devtool: "source-map",
 		entry: {
-			index: "./src/app.ts",
-			extractor: "./src/extractor.ts",
-			parser: "./src/graphml-parser.ts",
-			writer: "./src/schema-writer.ts"
+			index: "./src/app.ts"
 		},
 		output: {
 			path: path.join(__dirname, "build"),
