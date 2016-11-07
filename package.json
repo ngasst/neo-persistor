@@ -1,0 +1,44 @@
+{
+  "name": "neo-persistor",
+  "version": "0.1.0",
+  "description": "Very simple interface between TS classes and neo4j.",
+  "main": "index.js",
+  "scripts": {
+    "bump:patch": "node ./node_modules/node-bumper/build/index patch --git",
+    "bump:patch:pub": "node ./node_modules/node-bumper/build/index patch --git --npm",
+    "bump:minor": "node ./node_modules/node-bumper/build/index minor --git",
+    "bump:minor:pub": "node ./node_modules/node-bumper/build/index minor --git --npm",
+    "bump:major": "node ./node_modules/node-bumper/build/index major --git",
+    "bump:major:pub": "node ./node_modules/node-bumper/build/index major --git --npm",
+    "tsnode": "node ./node_modules/ts-node/dist/index"
+  },
+  "author": "Gaston Ndanyuzwe <gaston.ndanyuzwe@infinteacacia.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chalk": "^0.4.31",
+    "@types/fs-extra": "0.0.34",
+    "@types/node": "^6.0.46",
+    "@types/pluralize": "0.0.27",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-4.0.build": "^4.0.0-build.a271520",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-util": "^3.0.7",
+    "node-bumper": "^0.1.24",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.5.4",
+    "source-map-support": "^0.4.5",
+    "ts-loader": "^0.9.5",
+    "ts-node": "^1.6.1",
+    "typescript": "^2.0.6",
+    "webpack": "2.1.0-beta.20",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "fs-extra": "^0.30.0",
+    "neo4j-driver": "latest",
+    "pluralize": "^3.0.0"
+  }
+}
