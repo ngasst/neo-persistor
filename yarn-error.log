@@ -1,14 +1,14 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add neo4j-driver@latest
+  C:\Applic\Ide\Netbeans\nodejs\node.exe C:\Applic\Ide\Netbeans\nodejs\node_modules\yarn\bin\yarn.js add neo4j/neo4j-javascript-driver#1.1.0-M01
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Users\ndany\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\nodejs;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ndany\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Applic\Ide\Netbeans\git\mingw64\bin;C:\Applic\Ide\Netbeans\git\usr\bin;U:\bin;C:\ProgramData\Oracle\Java\javapath;C:\Applic\Oracle\product\11.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Enterprise Vault\EVClient;C:\ProgramData\Oracle\Java\javapath;C:\Applic\Oracle\product\11.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Enterprise Vault\EVClient;C:\Applic\Ide\Netbeans\Go\bin;C:\Applic\Ide\Netbeans\git\usr\bin;C:\Applic\Ide\Netbeans\gocode\bin;C:\Users\ndanyuzwe.g\Desktop\gcc-tdm\bin;C:\Applic\Ide\Netbeans\MinGW\bin;C:\Applic\Ide\Netbeans\nodejs;C:\Applic\Ide\Netbeans\npm;C:\Applic\Ide\Netbeans\oracleInstaClient\vc10;C:\Applic\Ide\Netbeans\oracleInstaClient;C:\Applic\Ide\Netbeans\vscode;C:\Applic\Ide\Netbeans\python27;C:\Applic\Ide\Netbeans\nodejs\node_modules\gml\build
 
 Yarn version: 
   0.16.1
 
 Node version: 
-  6.3.1
+  6.9.1
 
 Platform: 
   win32 x64
@@ -54,7 +54,9 @@ npm manifest:
     "dependencies": {
       "chalk": "^1.1.3",
       "fs-extra": "^0.30.0",
-      "pluralize": "^3.0.0"
+      "neo4j-driver": "latest",
+      "pluralize": "^3.0.0",
+      "rxjs": "latest"
     }
   }
 
@@ -2235,6 +2237,10 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.0.tgz#e9ff841418a6b2ec7a495e939984f78f163e6e31"
   
+  neo4j-driver@latest:
+    version "1.1.0-M02"
+    resolved "https://registry.yarnpkg.com/neo4j-driver/-/neo4j-driver-1.1.0-M02.tgz#199e1eceda3a00fd7e0496488ec9f2a6f849f75c"
+  
   nested-error-stacks@^1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-1.0.2.tgz#19f619591519f096769a5ba9a86e6eeec823c3cf"
@@ -2839,6 +2845,12 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
   
+  rxjs@latest:
+    version "5.0.0-rc.2"
+    resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.2.tgz#d38206f50eeb1e77b0832a74c1c2adeeed5ec2b7"
+    dependencies:
+      symbol-observable "^1.0.1"
+  
   semver-diff@^2.0.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -3057,6 +3069,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
     dependencies:
       has-flag "^1.0.0"
+  
+  symbol-observable@^1.0.1:
+    version "1.0.4"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
   
   tapable@^0.1.8:
     version "0.1.10"
@@ -3582,5 +3598,5 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yn/-/yn-1.2.0.tgz#d237a4c533f279b2b89d3acac2db4b8c795e4a63"
 
 Trace: 
-  Error: ENOENT: no such file or directory, open 'C:\Users\ndany\web\neo-persistor\node_modules\@types\chalk\index.d.ts'
+  Error: ENOENT: no such file or directory, open 'C:\Users\ndanyuzwe.g\Desktop\nodecode\neo-persistor\node_modules\@types\node\index.d.ts'
       at Error (native)

@@ -1,5 +1,8 @@
 const neo = require('neo4j-driver').v1;
+import { Driver, Session } from './interfaces';
 import * as chalk from 'chalk';
+import { stringify } from './stringify';
+
 export class NeoPersistor {
     //class wide parameters
     protected connex: string;
@@ -15,8 +18,8 @@ export class NeoPersistor {
 
     //a single method that returns a generic response
     protected execute(query: string): Promise<any> {
-        const driver: any = neo.driver(this.connex, neo.auth.basic(this.username, this.password));
-        const session: any = driver.session();
+        const driver: Driver = new Driver() //Driver(this.connex, neo.auth.basic(this.username, this.password));
+        const session: Session = driver.session();
 
         return new Promise((resolve, reject) => {
             session
@@ -38,7 +41,15 @@ export class NeoPersistor {
      */
     createNode(label: string, props: Object) {
         return new Promise((resolve, reject) => {
-            let query: string = `CREATE (n:${label} )`;
+            let query: string = `CREATE (n:${label} stringify(props)) RETURN n`;
+
+            this.execute(query)
+            .then((n: Node) => {
+
+            })
+            .catch(err => {
+
+            })
         })
     }
     
