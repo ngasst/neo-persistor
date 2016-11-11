@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add neo4j-driver@latest
+  C:\Program Files\nodejs\node.exe C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add neo4j-javascript-driver-definitions
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Users\ndany\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\nodejs;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ndany\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -54,6 +54,7 @@ npm manifest:
     "dependencies": {
       "chalk": "^1.1.3",
       "fs-extra": "^0.30.0",
+      "neo4j-driver": "latest",
       "pluralize": "^3.0.0"
     }
   }
@@ -2235,6 +2236,10 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.0.tgz#e9ff841418a6b2ec7a495e939984f78f163e6e31"
   
+  neo4j-driver@latest:
+    version "1.1.0-M02"
+    resolved "https://registry.yarnpkg.com/neo4j-driver/-/neo4j-driver-1.1.0-M02.tgz#199e1eceda3a00fd7e0496488ec9f2a6f849f75c"
+  
   nested-error-stacks@^1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-1.0.2.tgz#19f619591519f096769a5ba9a86e6eeec823c3cf"
@@ -3582,5 +3587,5 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yn/-/yn-1.2.0.tgz#d237a4c533f279b2b89d3acac2db4b8c795e4a63"
 
 Trace: 
-  Error: ENOENT: no such file or directory, open 'C:\Users\ndany\web\neo-persistor\node_modules\@types\chalk\index.d.ts'
+  Error: ENOENT: no such file or directory, open 'C:\Users\ndany\web\neo-persistor\node_modules\@types\es6-promise\index.d.ts'
       at Error (native)
