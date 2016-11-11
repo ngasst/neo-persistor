@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add neo4j-javascript-driver-definitions
+  C:\Program Files\nodejs\node.exe C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js upgrade neo4j-javascript-definitions
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Users\ndany\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ndany\bin;C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\nodejs;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ndany\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -54,8 +54,15 @@ npm manifest:
     "dependencies": {
       "chalk": "^1.1.3",
       "fs-extra": "^0.30.0",
+  <<<<<<< HEAD
       "neo4j-driver": "latest",
+      "neo4j-javascript-driver-definitions": "^0.1.1",
       "pluralize": "^3.0.0"
+  =======
+      "neo4j-driver": "neo4j/neo4j-javascript-driver#1.1.0-M01",
+      "pluralize": "^3.0.0",
+      "rxjs": "latest"
+  >>>>>>> 19277bfc051bb2c9ee2fe52df8548bb0b0657e72
     }
   }
 
@@ -71,6 +78,10 @@ Lockfile:
   "@types/chalk@^0.4.31":
     version "0.4.31"
     resolved "https://registry.yarnpkg.com/@types/chalk/-/chalk-0.4.31.tgz#a31d74241a6b1edbb973cf36d97a2896834a51f9"
+  
+  "@types/es6-promise@^0.0.32":
+    version "0.0.32"
+    resolved "https://registry.yarnpkg.com/@types/es6-promise/-/es6-promise-0.0.32.tgz#3bcf44fb1e429f3df76188c8c6d874463ba371fd"
   
   "@types/fs-extra@0.0.34":
     version "0.0.34"
@@ -2240,6 +2251,20 @@ Lockfile:
     version "1.1.0-M02"
     resolved "https://registry.yarnpkg.com/neo4j-driver/-/neo4j-driver-1.1.0-M02.tgz#199e1eceda3a00fd7e0496488ec9f2a6f849f75c"
   
+  <<<<<<< HEAD
+  neo4j-javascript-driver-definitions:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/neo4j-javascript-driver-definitions/-/neo4j-javascript-driver-definitions-0.1.1.tgz#34d5ca1d7de9a38a139f1a857cfd61564d7d56a7"
+    dependencies:
+      "@types/es6-promise" "^0.0.32"
+      node-bumper "^0.1.26"
+  =======
+  neo4j/neo4j-javascript-driver#1.1.0-M01:
+    name neo4j-driver
+    version "1.1.0-dev"
+    resolved "https://codeload.github.com/neo4j/neo4j-javascript-driver/tar.gz/70da3bba6cd28614501aeed8bbed76b5484e3828"
+  >>>>>>> 19277bfc051bb2c9ee2fe52df8548bb0b0657e72
+  
   nested-error-stacks@^1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-1.0.2.tgz#19f619591519f096769a5ba9a86e6eeec823c3cf"
@@ -2254,7 +2279,7 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   
-  node-bumper@^0.1.24:
+  node-bumper@^0.1.24, node-bumper@^0.1.26:
     version "0.1.26"
     resolved "https://registry.yarnpkg.com/node-bumper/-/node-bumper-0.1.26.tgz#cb31b51e8fb58c3cb834daea064f82d54babd02c"
     dependencies:
@@ -2844,6 +2869,12 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
   
+  rxjs@latest:
+    version "5.0.0-rc.2"
+    resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.2.tgz#d38206f50eeb1e77b0832a74c1c2adeeed5ec2b7"
+    dependencies:
+      symbol-observable "^1.0.1"
+  
   semver-diff@^2.0.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -3062,6 +3093,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
     dependencies:
       has-flag "^1.0.0"
+  
+  symbol-observable@^1.0.1:
+    version "1.0.4"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
   
   tapable@^0.1.8:
     version "0.1.10"
@@ -3587,5 +3622,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yn/-/yn-1.2.0.tgz#d237a4c533f279b2b89d3acac2db4b8c795e4a63"
 
 Trace: 
-  Error: ENOENT: no such file or directory, open 'C:\Users\ndany\web\neo-persistor\node_modules\@types\es6-promise\index.d.ts'
-      at Error (native)
+  SyntaxError: Unknown token 2179:1
+      at Parser.unexpected (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\lib\lockfile\parse.js:218:11)
+      at Parser.parse (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\lib\lockfile\parse.js:323:14)
+      at exports.default (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\lib\lockfile\parse.js:13:17)
+      at C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\lib\lockfile\wrapper.js:129:60
+      at next (native)
+      at step (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
+      at C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:28:13
+      at run (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\node_modules\core-js\library\modules\es6.promise.js:87:22)
+      at C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\node_modules\core-js\library\modules\es6.promise.js:100:28
+      at flush (C:\Users\ndany\AppData\Roaming\npm\node_modules\yarn\node_modules\core-js\library\modules\_microtask.js:18:9)

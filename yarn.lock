@@ -2176,12 +2176,19 @@ neo4j-driver@latest:
   version "1.1.0-M02"
   resolved "https://registry.yarnpkg.com/neo4j-driver/-/neo4j-driver-1.1.0-M02.tgz#199e1eceda3a00fd7e0496488ec9f2a6f849f75c"
 
+<<<<<<< HEAD
 neo4j-javascript-driver-definitions:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/neo4j-javascript-driver-definitions/-/neo4j-javascript-driver-definitions-0.1.1.tgz#34d5ca1d7de9a38a139f1a857cfd61564d7d56a7"
   dependencies:
     "@types/es6-promise" "^0.0.32"
     node-bumper "^0.1.26"
+=======
+neo4j/neo4j-javascript-driver#1.1.0-M01:
+  name neo4j-driver
+  version "1.1.0-dev"
+  resolved "https://codeload.github.com/neo4j/neo4j-javascript-driver/tar.gz/70da3bba6cd28614501aeed8bbed76b5484e3828"
+>>>>>>> 19277bfc051bb2c9ee2fe52df8548bb0b0657e72
 
 nested-error-stacks@^1.0.0:
   version "1.0.2"
@@ -2787,6 +2794,12 @@ ripemd160@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
 
+rxjs@latest:
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.2.tgz#d38206f50eeb1e77b0832a74c1c2adeeed5ec2b7"
+  dependencies:
+    symbol-observable "^1.0.1"
+
 semver-diff@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -3005,6 +3018,10 @@ supports-color@^3.1.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
   dependencies:
     has-flag "^1.0.0"
+
+symbol-observable@^1.0.1:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 tapable@^0.1.8:
   version "0.1.10"

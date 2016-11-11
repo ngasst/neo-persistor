@@ -38,8 +38,14 @@
   "dependencies": {
     "chalk": "^1.1.3",
     "fs-extra": "^0.30.0",
+<<<<<<< HEAD
     "neo4j-driver": "latest",
     "neo4j-javascript-driver-definitions": "^0.1.1",
     "pluralize": "^3.0.0"
+=======
+    "neo4j-driver": "neo4j/neo4j-javascript-driver#1.1.0-M01",
+    "pluralize": "^3.0.0",
+    "rxjs": "latest"
+>>>>>>> 19277bfc051bb2c9ee2fe52df8548bb0b0657e72
   }
 }
