@@ -1,7 +1,6 @@
 import { Driver, Session, Result, Node, v1, ResultSummary, IStatementStatistics, Record, Neo4jError } from 'neo4j-driver';
 import * as chalk from 'chalk';
 import { stringify } from './stringify';
-import { Observable, Subscription } from '@reactivex/rxjs';
 import { NodeFeedback, EdgeFeedback } from './interfaces';
 export class NeoPersistor {
     //class wide parameters
@@ -24,7 +23,7 @@ export class NeoPersistor {
         let res: Result = session.run(query);
         return new Promise((resolve, reject) => {
 			let records: Record[] = [];
-            let sub: Subscription = res.subscribe({
+            res.subscribe({
 			  onNext: (record: Record) => {
 			    records.push(record);
 			  }, onCompleted: (summary: ResultSummary) => {
@@ -53,6 +52,12 @@ export class NeoPersistor {
 
             this.execute(query)
             .then((records: Record[]) => {
+                /*let feedback: NodeFeedback[] = records.map(r => {
+                    return {
+                        label:r.get('_')
+                    }
+                })*/
+                console.log(records);
                 resolve(records);
             })
             .catch((err: Neo4jError) => {

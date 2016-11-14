@@ -2,7 +2,8 @@ import { NeoPersistor } from './persistor';
 import { Record } from 'neo4j-driver';
 import { NodeFeedback, EdgeFeedback } from './interfaces';
 
-const persistor: NeoPersistor = new NeoPersistor('bolt', 'localhost', 3689, 'neo4j', 'jzZinV161zGlFi7IIHsJcNtu');
+const persistor: NeoPersistor = new NeoPersistor('bolt', 'gasst.dynu.com', 7687, 'neo4j', 'jzZinV161zGlFi7IIHsJcNtu');
+//const persistor: NeoPersistor = new NeoPersistor(null, null, null, null, null, 'http://storyient:DXeBJ4JDDwh8oU3SaGNA@hobby-jfoipabmjcbmgbkecmfccknl.dbs.graphenedb.com:24789/db/data/');
 
 persistor.createNode('Test', {id: 'lkdjflksj154545'})
 .then((records1: Record[]) => {
