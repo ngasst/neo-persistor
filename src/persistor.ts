@@ -1,35 +1,43 @@
-const neo = require('neo4j-driver').v1;
-import { Driver, Session } from './interfaces';
+import { Driver, Session, Result, Node, v1, ResultSummary, IStatementStatistics, Record, Neo4jError } from 'neo4j-driver';
 import * as chalk from 'chalk';
 import { stringify } from './stringify';
-
+import { Observable, Subscription } from '@reactivex/rxjs';
+import { NodeFeedback, EdgeFeedback } from './interfaces';
 export class NeoPersistor {
     //class wide parameters
     protected connex: string;
+    protected driver: Driver; //Driver(this.connex, neo.auth.basic(this.username, this.password));
 
     //constructor receives the necessary information to create a connection
-    constructor(protected protocol: number,
+    constructor(protected protocol: string,
         protected hostname: string,
         protected port: number,
         protected username: string,
         protected password: string) {
-            this.connex = `${this.protocol}://${this.hostname}`;
+        this.connex = `${this.protocol}://${this.hostname}`;
+        this.driver = v1.driver(this.connex, v1.auth.basic(this.username, this.password));
     }
-
+    
     //a single method that returns a generic response
-    protected execute(query: string): Promise<any> {
-        const driver: Driver = new Driver() //Driver(this.connex, neo.auth.basic(this.username, this.password));
-        const session: Session = driver.session();
-
+    protected execute(query: string): Promise<Record[]> {
+        const session: Session = this.driver.session();
+        let res: Result = session.run(query);
         return new Promise((resolve, reject) => {
-            session
-            .run(query)
-            .then((result: any) => {})
-            .catch((err) => {
-                session.close();
-                console.log(chalk.red(err));
-                reject(err);
-            });
+			let records: Record[] = [];
+            let sub: Subscription = res.subscribe({
+			  onNext: (record: Record) => {
+			    records.push(record);
+			  }, onCompleted: (summary: ResultSummary) => {
+			    session.close(() => null);
+                this.driver.close();
+			    resolve(records);
+			  }, onError: (error: Neo4jError) => {
+			    console.log(error);
+                session.close(() => null);
+                this.driver.close();
+                reject(error);
+			  }
+			});
         });
     }
     
@@ -41,15 +49,16 @@ export class NeoPersistor {
      */
     createNode(label: string, props: Object) {
         return new Promise((resolve, reject) => {
-            let query: string = `CREATE (n:${label} stringify(props)) RETURN n`;
+            let query: string = `CREATE (n:${label} ${stringify(props)}) RETURN n`;
 
             this.execute(query)
-            .then((n: Node) => {
-
+            .then((records: Record[]) => {
+                resolve(records);
             })
-            .catch(err => {
-
-            })
+            .catch((err: Neo4jError) => {
+                console.log(err.message);
+                reject(err);
+            });
         })
     }
     
@@ -63,15 +72,59 @@ export class NeoPersistor {
      * @param {string} toLabel
      * @return {Promise<Relationship>} p - The promise wrapping the created relationship
      */
+    createEdge(fromLabel: string, fromCondition: Object, toCondition: Object, edgeLabel: string, edgeProperties: Object, toLabel: string) {
+        let props: string = stringify(Object.assign({}, edgeProperties, {createdAt: 'timestamp()'}));
+        let query: string = `
+        MATCH (from:${fromLabel} ${stringify(fromCondition)})
+        MATCH (to:${toLabel} ${stringify(toCondition)})
+        MERGE (from)-[r:${edgeLabel} ${stringify(edgeProperties)}]->(to)
+        RETURN from,r,to
+        `;
+        return new Promise((resolve, reject) => {
+			this.execute(query)
+            .then((records: Record[]) => {
+                resolve(records);
+            })
+            .catch((err: Neo4jError) => {
+                //console.log(err);
+                reject(err);
+            });
+        });
+    }
 
     /**
-     * Deletes one single node
+     * Deletes node(s)
      * @param {string} label
-     * @param {Object} condition
+     * @param {Object} [condition] - condition to filter node(s) to be deleted. If omitted, all nodes matching label will be deleted.
+     * @return {NodeFeedback} feedback - the result of the delete operation
      */
+    deleteNode(label: string, condition: Object = {}): Promise<NodeFeedback> {
+		let query: string = `
+        MATCH(n:${label} ${stringify(condition)})
+        WITH n, n.id as id
+        DETACH DELETE n
+        RETURN id
+        `;
+        return new Promise((resolve, reject) => {
+			this.execute(query)
+            .then((records: Record[]) => {
+                let feedback: NodeFeedback[] = records.map(r => {
+                    return {
+	                    label: label,
+	                    action: 'delete',
+	                    properties: {
+	                        id: r.get('id')
+	                    }
+	                };
+                });
+                resolve(feedback);
+            })
+            .catch(err => reject(err));
+        });
+    }
 
     /**
-     * Updates one single node
+     * Updates node(s)
      * @param {string} label
      * @param {Object} condition
      * @param {Object} newParameters
