@@ -3,3 +3,8 @@ export interface NodeFeedback {
     properties: Object;
     action: string;
 }
+
+export interface NodeResponse {
+    labels: string[];
+    properties: Object;
+}

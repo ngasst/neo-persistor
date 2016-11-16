@@ -1,7 +1,7 @@
+import { Node, Relationship } from 'neo4j-driver';
 export interface EdgeFeedback {
-    from: string;
-    to: string;
-    label: string;
-    properties: Object;
+    from: Node;
+    to: Node;
+    edge: Relationship
     action: string;
 }

@@ -1,2 +1,2 @@
-export { EdgeFeedback } from './edge'
-export { NodeFeedback } from './node'
+export { EdgeFeedback } from './edge';
+export { NodeFeedback, NodeResponse } from './node';
